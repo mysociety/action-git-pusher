@@ -1,0 +1,18 @@
+name: "Git Mirroring Action"
+description: 'Automate mirroring of git commits, tags or other things somewhere else'
+inputs:
+  remote:
+    description: 'The full remote repository URL'
+    required: true
+  git_ssh_key:
+    description: 'Private key to use to connect to the remote repository'
+    required: true
+  ssh_known_hosts:
+    description: 'Contents of a known_hosts file'
+    required: false
+  tag:
+    description: 'If you just want to push a tag, provide it here.'
+    required: false
+runs:
+  using: docker
+  image: 'Dockerfile'
