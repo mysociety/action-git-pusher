@@ -1,5 +1,5 @@
 name: "Git Mirroring Action"
-description: 'Automate mirroring of git commits, tags or other things somewhere else'
+description: 'Automate mirroring of git commits, tags or other things.'
 inputs:
   remote:
     description: 'The full remote repository URL'

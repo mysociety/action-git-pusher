@@ -1,0 +1,31 @@
+name: Linting
+
+on:
+  push:
+    branches-ignore:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  linter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Lint Dockerfile
+        uses: brpaz/hadolint-action@v1.3.1
+        with:
+          dockerfile: "Dockerfile"
+
+      - name: Lint YAML
+        uses: ibiqlik/action-yamllint@v3
+        with:
+          file_or_dir: "action.yaml"
+
+      - name: Run Shellcheck
+        uses: azohra/shell-linter@latest
+        with:
+          path: "entrypoint.sh"
