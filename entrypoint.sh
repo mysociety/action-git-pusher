@@ -5,6 +5,8 @@ set -e
 eval "$(ssh-agent)"
 ssh-add <(echo "$INPUT_GIT_SSH_KEY")
 
+git config --global --add safe.directory /github/workspace
+
 if [ -n "$INPUT_SSH_KNOWN_HOSTS" ] ; then
     echo "$INPUT_SSH_KNOWN_HOSTS" > /known_hosts
     git config --global core.sshCommand "ssh -o UserKnownHostsFile=/known_hosts -o CheckHostIP=no"
