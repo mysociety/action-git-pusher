@@ -16,8 +16,11 @@ fi
 
 git remote add mirror "$INPUT_REMOTE"
 
+# Extract potentially multiple flags to CONFIG_FLAGS
+IFS=' ' read -ra CONFIG_FLAGS <<< "$INPUT_EXTRA_GIT_CONFIG"
+
 if [ -n "$INPUT_TAG" ] ; then
-    git push mirror "$INPUT_TAG" $INPUT_EXTRA_GIT_CONFIG
+    git push mirror "$INPUT_TAG" "${CONFIG_FLAGS[@]}"
 else
     echo "Not implemented yet"
     exit 1
