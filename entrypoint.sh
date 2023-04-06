@@ -17,7 +17,7 @@ fi
 git remote add mirror "$INPUT_REMOTE"
 
 if [ -n "$INPUT_TAG" ] ; then
-    git push mirror "$INPUT_TAG"
+    git push mirror "$INPUT_TAG" $INPUT_EXTRA_GIT_CONFIG
 else
     echo "Not implemented yet"
     exit 1
