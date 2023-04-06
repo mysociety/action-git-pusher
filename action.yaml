@@ -14,7 +14,7 @@ inputs:
     description: 'If you just want to push a tag, provide it here.'
     required: false
   extra_git_config:
-    description: 'Any extra config to fit to the git push comment (e.g. --force)'
+    description: 'Any extra config for the git push comment (e.g. --force)'
     required: false
     default: ''
 runs:
