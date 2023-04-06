@@ -47,3 +47,17 @@ jobs:
         tag: ${{ steps.bump_tag.outputs.new_tag }}
         remote: 'ssh://username@git.example.com/path/to/repository.git'
 ```
+
+To add extra flags to the git push command, you can use the `extra_git_config` input.
+
+```yaml
+    - name: Test force pushing to mirror
+      id: push_to_mirror
+      uses: mysociety/action-git-pusher@v1.0.0
+      with:
+        git_ssh_key: ${{ secrets.SOME_GIT_KEY }}
+        ssh_known_hosts: ${{ secrets.SOME_KNOWN_HOSTS }}
+        tag: ${{ steps.bump_tag.outputs.new_tag }}
+        remote: 'ssh://username@git.example.com/path/to/repository.git'
+        extra_git_config: --force --dry-run
+```
