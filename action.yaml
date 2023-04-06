@@ -13,6 +13,10 @@ inputs:
   tag:
     description: 'If you just want to push a tag, provide it here.'
     required: false
+  extra_git_config:
+    description: 'Any extra config to fit to the git push comment (e.g. --force)'
+    required: false
+    default: ''
 runs:
   using: docker
   image: 'Dockerfile'
