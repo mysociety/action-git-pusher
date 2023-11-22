@@ -40,7 +40,7 @@ jobs:
 
     - name: Push Tag to mirror
       id: push_to_mirror
-      uses: mysociety/action-git-pusher@v1.0.0
+      uses: mysociety/action-git-pusher@v1.2.0
       with:
         git_ssh_key: ${{ secrets.SOME_GIT_KEY }}
         ssh_known_hosts: ${{ secrets.SOME_KNOWN_HOSTS }}
@@ -53,7 +53,7 @@ To add extra flags to the git push command, you can use the `extra_git_config` i
 ```yaml
     - name: Test force pushing to mirror
       id: push_to_mirror
-      uses: mysociety/action-git-pusher@v1.0.0
+      uses: mysociety/action-git-pusher@v1.2.0
       with:
         git_ssh_key: ${{ secrets.SOME_GIT_KEY }}
         ssh_known_hosts: ${{ secrets.SOME_KNOWN_HOSTS }}
